@@ -19,6 +19,6 @@ This will allow you to worry less about must-haves for any apps, like - user aut
 
 - `/pages`: This folder contains all the pages(screens) of the app. Example: Login page, Home page, Profile page, etc.
 - `/components`: Components are reusable UI parts of the app. They can be used across multiple pages. Example: buttons, sliders, text input field, cards, etc.
-- `/models`: This folder contains all the models of the app. Example: User model, Post model, etc.
-- `/services`: Services are reusable code that interacts with Firebase, Stripe, Mailgun, etc. Example: Auth service, Firestore service, etc.
+- `/models`: Models are classes that define the structure of the data. It is used to validate we expect to receive from any service and also to define the structure of the data we are sending to any service. Example: User model, product model, etc.
+- `/services`: Service classes contain the code to interact with Firebase, Stripe, Mailgun, etc. Example: Auth service, Firestore service, etc.
 - `/theme`: This folder contains all the theme related code of the app. Example: Colors, Fonts, etc.
