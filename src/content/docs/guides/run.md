@@ -27,8 +27,8 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
 1. Go to the directory where you want to place your project.
     
     ```bash
-    git clone https://github.com/mahima-manik/flutter-dev-kit.git
-    cd flutter-dev-kit
+    git clone https://github.com/mahima-manik/flutter-starter-kit.git
+    cd flutter-starter-kit
     ```
     
 
