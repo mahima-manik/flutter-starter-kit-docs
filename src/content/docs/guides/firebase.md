@@ -64,4 +64,16 @@ flutterfire configure
 
 3. Generates a `google-services.json` file for each platform that you selected.
 4. Adds the necessary dependencies to your `pubspec.yaml` file.
-4. Adds the necessary code to your `AndroidManifest.xml` file for Android.
+5. Adds the necessary code to your `AndroidManifest.xml` file for Android.
+
+After running the command, you should clean and run your project to make sure everything is working.
+
+```bash
+flutter clean
+flutter run
+```
+
+Congrats! You have successfully added Firebase to your Flutter project!
+
+## References
+1. https://firebase.google.com/docs/flutter/setup
