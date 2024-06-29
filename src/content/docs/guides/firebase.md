@@ -75,5 +75,10 @@ flutter run
 
 Congrats! You have successfully added Firebase to your Flutter project!
 
+## Common errors
+1. Flutter Android: One or more plugins require a higher Android NDK version. Link: [here](https://stackoverflow.com/questions/73032815/flutter-android-one-or-more-plugins-require-a-higher-android-ndk-version).
+    
+    Solution: Choose the latest NDK version from [here](https://developer.android.com/ndk/downloads) and update in `android/app/build.gradle`.
+
 ## References
 1. https://firebase.google.com/docs/flutter/setup
