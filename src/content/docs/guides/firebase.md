@@ -3,8 +3,6 @@ title: Setup Firebase
 description: Learn how to setup Firebase
 ---
 
-## What’s Firebase for?
-
 Firebase is Google’s cross-platform app development platform. It provides fully managed backend service infrastructure for web based, android or iOS applications.
 
 Firebase provides extensions for common development tasks like authentication, payments, email, etc — which can be added per project basis.
@@ -52,3 +50,18 @@ Run this command from any directory to install:
 dart pub global activate flutterfire_cli
 ```
 
+## Add Firebase to your Flutter project
+
+This command runs the worflow to add apps to your Firebase project and generate necessary files for your Flutter project to use Firebase:
+```bash
+flutterfire configure
+```
+
+1. Asks you to select the platforms (iOS, Android, Web) that you want to support in your Flutter app. For each selected platform, the FlutterFire CLI creates a new Firebase app in your Firebase project.
+2. Creates a Firebase configuration file (`firebase_options.dart`) and adds it to your `lib/` directory. 
+
+    > **👋 Note:** `firebase_options.dart` file is already included in the project. This command is supposed to override the existing file and add your selected platforms. It will also make changes in `ios` and `android` folders.
+
+3. Generates a `google-services.json` file for each platform that you selected.
+4. Adds the necessary dependencies to your `pubspec.yaml` file.
+4. Adds the necessary code to your `AndroidManifest.xml` file for Android.
