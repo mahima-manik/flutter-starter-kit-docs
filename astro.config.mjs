@@ -16,7 +16,16 @@ export default defineConfig({
 				},
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guides' },
+					items: [
+						{
+							label: 'Run the Project',
+							link: '/guides/run/',
+						},
+						{
+							label: 'Setup Firebase',
+							link: '/guides/firebase/',
+						},
+					],
 				},
 				{
 					label: 'Reference',
