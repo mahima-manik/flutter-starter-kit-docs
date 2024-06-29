@@ -1,4 +1,4 @@
 ---
 title: State management
-description: 
+description: Some description
 ---

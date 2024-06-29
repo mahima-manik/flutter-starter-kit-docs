@@ -1,4 +1,4 @@
 ---
 title: Firestore
-description: 
+description: Some description
 ---

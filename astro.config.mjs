@@ -28,6 +28,27 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Functions',
+					items: [
+						{
+							label: 'User authentication',
+							link: '/functions/login/',
+						},
+						{
+							label: 'Profile',
+							link: '/functions/profile/',
+						},
+						{
+							label: 'Provider',
+							link: '/functions/provider/',
+						},
+						{
+							label: 'Firestore',
+							link: '/functions/firestore/',
+						},
+					],
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
