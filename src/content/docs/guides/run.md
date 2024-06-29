@@ -20,7 +20,7 @@ Choose your development environment and target device to get started.
 
 Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flutter is setup correctly. Don’t worry - everything may not be check for you. It depends on the development environment you have chosen.
 
-![Screenshot 2024-06-27 at 1.25.40 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/15829d13-6887-445c-bf7c-475c31411b7d/d443d919-53d6-44ec-8658-bf69a5e0a114/Screenshot_2024-06-27_at_1.25.40_PM.png)
+![Flutter Doctor](../../../assets/flutter-doctor.png)
 
 ### Start with Flutter Dev Kit
 
@@ -42,11 +42,11 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     
 2. Select a device from bottom-right corner of your VSCode editor. 
     
-    ![Screenshot 2024-06-27 at 1.40.16 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/15829d13-6887-445c-bf7c-475c31411b7d/4269c8c6-19f2-40a7-a258-21c1ed192f82/6b73c6c1-8dc7-482d-821d-8f7346af4238.png)
+    ![Flutter Devices](../../../assets/device-select.png)
     
 3. Go to `lib/main.dart` , you will see a debug and run button on top-right corner of IDE. It performs the build, installs and run the application on selected device.
     
-    ![Run button on top-right](https://prod-files-secure.s3.us-west-2.amazonaws.com/15829d13-6887-445c-bf7c-475c31411b7d/ae8b74e8-2fef-431e-a8f1-db36b848e598/Screenshot_2024-06-27_at_2.26.36_PM.png)
+    ![Run button on top-right](../../../assets/run-button.png)
     
     Run button on top-right
     
@@ -56,7 +56,9 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     flutter run
     ```
     
-    ![Screenshot 2024-06-27 at 2.25.07 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/15829d13-6887-445c-bf7c-475c31411b7d/824f5898-b27a-489e-93f5-718a951f58ec/Screenshot_2024-06-27_at_2.25.07_PM.png)
+    <div align="center">
+        <img src="../../public/login-screen.png" style="max-width: 50%;"></img>
+    </div>
     
 
 Congratulations! 🥳 You have successfully run the project! Now we will make it feature rich step by step.
