@@ -3,11 +3,9 @@ title: Run the Project
 description: Learn how to run the project
 ---
 
-Flutter provider quite intensive guide on installation for different platforms: https://docs.flutter.dev/get-started/install
+Flutter provider quite intensive guide on installation for different platforms: https://docs.flutter.dev/get-started/install. Choose your development environment and target device to get started. 
 
-Choose your development environment and target device to get started. 
-
-### Overview
+Here is a quick overview of the steps to run the project:
 
 1. Make sure you are working with system with minimum 8GB RAM, 4 core CPU and enough free disk space. This is to ensure enough resources and speed when running the project locally.
 2. You need to install Git for cloning project and running some flutter commands. Here is the guide in case you need it: https://github.com/git-guides/install-git
