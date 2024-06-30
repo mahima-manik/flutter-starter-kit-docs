@@ -14,13 +14,13 @@ Here is a quick overview of the steps to run the project:
 5. Download the device emulators for Android/iOS to run the code locally.
 6. Download your favourite IDE: VSCode or Cursor or Android Studio. I encourage you to try Cursor IDE. 
 
-### Verify Installation
+## Verify Installation
 
 Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flutter is setup correctly. Don’t worry - everything may not be check for you. It depends on the development environment you have chosen.
 
 ![Flutter Doctor](../../../assets/flutter-doctor.png)
 
-### Start with Flutter Dev Kit
+## Start with Flutter Dev Kit
 
 1. Go to the directory where you want to place your project.
     

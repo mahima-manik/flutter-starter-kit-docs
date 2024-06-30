@@ -31,16 +31,16 @@ export default defineConfig({
 					label: 'Functions',
 					items: [
 						{
+							label: 'Provider',
+							link: '/functions/provider/',
+						},
+						{
 							label: 'User authentication',
 							link: '/functions/login/',
 						},
 						{
 							label: 'Profile',
 							link: '/functions/profile/',
-						},
-						{
-							label: 'Provider',
-							link: '/functions/provider/',
 						},
 						{
 							label: 'Firestore',
