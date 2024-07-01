@@ -18,7 +18,18 @@ The Provider package is a popular state management solution in Flutter. It allow
 4. **Consumer:** The Consumer widget listens to changes in the state and rebuilds the UI accordingly. It helps to optimize the performance by rebuilding only the specific parts of the UI that depend on the state.
 5. **ChangeNotifierProvider:** The ChangeNotifierProvider widget provides an instance of the ChangeNotifier class to the widget tree, making it available to all descendant widgets.
 
-
+## Code up
+1. Add `provider` dependency to `pubspec.yaml`
+2. Create a class/object to represent the state. Examples:
+    - `ThemeData` contains the theme data (light or dark).
+    - `CartItem` contains the cart item data (product, quantity and method to update the quantity).
+    - `Auth` contains the authentication data of the user. This is already defined by `firebase_auth` package.
+3. Create a ChangeNotifier class:
+    - `ThemeProvider` class manages the theme state (`ThemeData _themeData`)
+    - `CartProvider` class manages the shopping cart state
+    - `AuthProvider` class manages the authentication state
+4. Create a ChangeNotifierProvider widget
+5. Use a Consumer widget to build the UI
 ## Summary
 1. State Management: Managing the state of your application to ensure the UI updates in response to state changes.
 2. Provider Package: A popular state management solution in Flutter using ChangeNotifier to notify listeners about state changes.
