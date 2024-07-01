@@ -49,7 +49,35 @@ The Provider package is a popular state management solution in Flutter. It allow
         child: const MyApp())
     );
     ```
-5. Use a Consumer widget to build the UI
+5. Use a Consumer widget to build the UI:
+    - Wrap the part of the widget tree that depends on the state with a `Consumer` widget.
+    - The `Consumer` widget takes a builder function that provides the current state and allows you to build the UI based on that state.
+    
+    ```dart
+    Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) {
+            return MaterialApp(
+                theme: themeProvider.getTheme(),
+                home: HomeScreen(),
+            );
+        },
+    );
+    ```
+    - In this example, the `Consumer` widget listens to changes in the `ThemeProvider` and rebuilds the `MaterialApp` with the updated theme.
+
+6. Alternatively, use `Provider.of` to access the state:
+    - You can use `Provider.of<ThemeProvider>(context).themeData` to access the state directly without wrapping the widget tree with a `Consumer` widget.
+    - This approach is useful when you need to access the state in a less reactive manner, such as in event handlers or one-time state access.
+    
+    ```dart
+    final themeData = Provider.of<ThemeProvider>(context).themeData;
+    return MaterialApp(
+        theme: themeData,
+        home: HomeScreen(),
+    );
+    ```
+    - In this example, `Provider.of` is used to get the `themeData` directly from the `ThemeProvider` without rebuilding the widget tree when the state changes.
+    - Unlike `Consumer`, `Provider.of` does not automatically rebuild the UI when the state changes. It is more suitable for scenarios where you do not need continuous updates.
 ## Summary
 1. State Management: Managing the state of your application to ensure the UI updates in response to state changes.
 2. Provider Package: A popular state management solution in Flutter using ChangeNotifier to notify listeners about state changes.
