@@ -1,5 +1,5 @@
 ---
-title: User authentication
+title: Authentication
 description: Enable user to register, login using username/password, Google auth, and more.
 ---
 import { Image } from 'astro:assets';
@@ -7,8 +7,16 @@ import authOptions from '../../../assets/auth-options.png';
 import emailPass from '../../../assets/email-pass.png';
 import gSignin from '../../../assets/gsignin.png';
 import authSetup from '../../../assets/auth-setup.png';
+import { Card } from '@astrojs/starlight/components';
 
 This documentation provides an overview of how Firebase Authentication and Google Sign-In are integrated into the app. It covers the setup on the Firebase portal, the AuthService class, the UserAuthProvider class, and the profile update and login/logout functionalities.
+
+<Card title="Features" icon="information">
+    - Email/Password Sign-In
+    - Google Sign-In
+    - Profile Update
+    - Logout
+</Card>
 
 ## Firebase Setup
 Firebase offers multiple authentication methods. Enable Email/Password and Google provider sign in to get started.
@@ -62,6 +70,10 @@ UserAuthProvider() {
 ```
 - The provider centralizes the authentication state, ensuring that all parts of the app have a consistent view of the user's authentication status.
 - By using a provider, the authentication logic is decoupled from the UI components. This separation makes the code more modular, easier to maintain, and testable.
+
+<Card title="TODO" icon="setting">
+    Maybe additional step for Android GAuth by adding SHA key
+</Card>
 
 ## References
 1. https://firebase.google.com/docs/projects/learn-more

@@ -27,7 +27,7 @@ export default defineConfig({
         label: 'Provider',
         link: '/functions/provider/'
       }, {
-        label: 'User authentication',
+        label: 'Authentication',
         link: '/functions/login/'
       }, {
         label: 'Profile',
