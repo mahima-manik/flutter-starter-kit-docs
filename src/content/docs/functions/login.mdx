@@ -45,6 +45,23 @@ The AuthService class handles all authentication-related operations, including s
 - Update User Photo
 - Update Password
 
+#### Design
+The `UserAuthProvider` class extends `ChangeNotifier` and manages the user's authentication state. It listens to authentication state changes and user profile changes, updating its internal state and notifying listeners accordingly. 
+
+`UserAuthProvider` contains instance of `AuthService` to interact with Firebase Authentication. The constructor sets up listeners for authentication state changes and user profile changes. When these events occur, the `_onAuthUserChanged` method is called.
+```dart
+UserAuthProvider() {
+    _authService.authStateChanges.listen(_onAuthUserChanged);
+    _authService.userChanges.listen(_onAuthUserChanged);
+  }
+
+  void _onAuthUserChanged(User? user) {
+    _user = user;
+    notifyListeners();
+  }
+```
+- The provider centralizes the authentication state, ensuring that all parts of the app have a consistent view of the user's authentication status.
+- By using a provider, the authentication logic is decoupled from the UI components. This separation makes the code more modular, easier to maintain, and testable.
 
 ## References
 1. https://firebase.google.com/docs/projects/learn-more
