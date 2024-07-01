@@ -1,0 +1,50 @@
+---
+title: User authentication
+description: Enable user to register, login using username/password, Google auth, and more.
+---
+import { Image } from 'astro:assets';
+import authOptions from '../../../assets/auth-options.png';
+import emailPass from '../../../assets/email-pass.png';
+import gSignin from '../../../assets/gsignin.png';
+import authSetup from '../../../assets/auth-setup.png';
+
+This documentation provides an overview of how Firebase Authentication and Google Sign-In are integrated into the app. It covers the setup on the Firebase portal, the AuthService class, the UserAuthProvider class, and the profile update and login/logout functionalities.
+
+## Firebase Setup
+Firebase offers multiple authentication methods. Enable Email/Password and Google provider sign in to get started.
+<Image src={authOptions} alt="Authentication Options" />
+    
+1. In the Firebase console's **Authentication** section, open the [Sign in method](https://console.firebase.google.com/project/_/authentication/providers) page.
+2. From the **Sign in method** page, enable the **Email/password sign-in** method and click **Save**.
+    <Image src={emailPass} alt="Email/Password Sign-In" />
+3. Enable Google signin and provide your support email. Save and proceed.    
+    <Image src={gSignin} alt="Google Sign-In" />
+    
+    `google_sign_in` package is used in Flutter to enable authentication. For authentication on IOS device, you need to follow the steps here: https://pub.dev/packages/google_sign_in_ios#ios-integration. 
+    
+    You should see authentication setup something like this:
+    <Image src={authSetup} alt="Authentication Setup" />
+
+
+## AuthService Class
+The AuthService class handles all authentication-related operations, including sign-in, sign-out, registration, and profile updates.
+
+#### Key Methods
+- **Auth State Changes:** This stream notifies listeners about changes in the user's authentication state (e.g., sign-in, sign-out).
+    ```dart
+    Stream<User?> get authStateChanges => _auth.authStateChanges();
+    ```
+- **User Changes:** This stream notifies listeners about changes to the user's profile information.
+    ```dart
+    Stream<User?> get userChanges => _auth.userChanges();
+    ```
+- Sign In with Email and Password
+- Google Sign-In
+- Sign Out
+- Update Display Name
+- Update User Photo
+- Update Password
+
+
+## References
+1. https://firebase.google.com/docs/projects/learn-more
