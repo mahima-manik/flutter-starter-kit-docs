@@ -30,9 +30,6 @@ export default defineConfig({
         label: 'Authentication',
         link: '/functions/login/'
       }, {
-        label: 'Profile',
-        link: '/functions/profile/'
-      }, {
         label: 'Firestore',
         link: '/functions/firestore/'
       }]
