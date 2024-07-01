@@ -2,13 +2,21 @@
 title: Storage in Flutter
 description: Some description
 ---
+import { Image } from 'astro:assets';
+import fireStore from '../../../assets/firestore-struct.png';
+
+
 Firebase offers a variety of storage options for Flutter apps. The most commonly used are Firebase Storage and Cloud Firestore.
 
-- Firebase Storage: Used for storing files which can be images, videos, audio, and more. They are usually not changed often.
+- Firebase Storage: Used for storing files (mostly user-generated) which can be images, videos, audio, and more. They are usually not changed often.
 - Cloud Firestore: Used for storing structured data which can be used to create a NoSQL database.
 
 ## Cloud Firestore
 You need to follow steps [here](https://firebase.google.com/docs/firestore/quickstart#dart) to get started. You should create Cloud Firestore in Firebase Console first.
+
+We use Cloud Firestore to store product's information. It is parsed in product model in the code.
+
+<Image src={fireStore} alt="Firestore" />
 
 Pay attention to Cloud Firestore rules. Here is the one to allow read operation for everyone:
 ```json
@@ -22,5 +30,7 @@ service cloud.firestore {
   }
 }
 ```
+
+Read more about security [here](https://firebase.google.com/docs/firestore/security/rules-structure)
 
 ## Firebase Storage
