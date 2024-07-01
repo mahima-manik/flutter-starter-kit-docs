@@ -24,10 +24,10 @@ The Provider package is a popular state management solution in Flutter. It allow
     - `ThemeData` contains the theme data (light or dark).
     - `CartItem` contains the cart item data (product, quantity and method to update the quantity).
     - `Auth` contains the authentication data of the user. This is already defined by `firebase_auth` package.
-3. Create a ChangeNotifier class:
-    - `ThemeProvider` class manages the theme state (`ThemeData _themeData`)
-    - `CartProvider` class manages the shopping cart state
-    - `AuthProvider` class manages the authentication state
+3. Create provider class that extends `ChangeNotifier` class. It extends `ChangeNotifier` to provide the ability to notify listeners about state changes.
+    - `ThemeProvider` class manages the theme state (`ThemeData`)
+    - `CartProvider` class manages the shopping cart state (`Map<String, CartItem> _itemsMap`)
+    - `UserAuthProvider` class manages the authentication state (`Auth`) by using `AuthService` to get the current user's authentication state.
 4. Create a ChangeNotifierProvider widget
 5. Use a Consumer widget to build the UI
 ## Summary
