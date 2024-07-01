@@ -28,7 +28,27 @@ The Provider package is a popular state management solution in Flutter. It allow
     - `ThemeProvider` class manages the theme state (`ThemeData`)
     - `CartProvider` class manages the shopping cart state (`Map<String, CartItem> _itemsMap`)
     - `UserAuthProvider` class manages the authentication state (`Auth`) by using `AuthService` to get the current user's authentication state.
-4. Create a ChangeNotifierProvider widget
+4. Create a ChangeNotifierProvider widget:
+    
+    ```dart
+    ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+        child: child,
+    )
+    ```
+    
+    If you want to use multiple providers, you can use `MultiProvider` widget.
+    
+    ```dart
+    runApp(MultiProvider(
+        providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => UserAuthProvider()),
+        ChangeNotifierProvider(create: (context) => CartProvider()),
+        ],
+        child: const MyApp())
+    );
+    ```
 5. Use a Consumer widget to build the UI
 ## Summary
 1. State Management: Managing the state of your application to ensure the UI updates in response to state changes.
