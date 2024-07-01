@@ -2,22 +2,25 @@
 title: Setup Firebase
 description: Learn how to setup Firebase
 ---
+import { Image } from 'astro:assets';
+import gsignin from '../../../assets/gsignin.png';
 
 Firebase is Google’s cross-platform app development platform. It provides fully managed backend service infrastructure for web based, android or iOS applications.
 
-Firebase provides extensions for common development tasks like authentication, payments, email, etc — which can be added per project basis.
+Firebase provides extensions for common development tasks like authentication, payments, email, etc  —  which can be added per project basis.
 
 ## Create Firebase Project
 
 1. Sign in into your Google account.
 2. You need to create a Firebase project, if you don’t already have one. Go to Firebase console [here](https://console.firebase.google.com/) - create a new project. Example: `flutter-starter-kit`. Feel free to disable Google Analytics for this project. Either way, it will not matter - you can enable it later from Project Settings → Integrations.
-![Create Firebase Project](../../../assets/gsignin.png)
+
+    <Image src={gsignin} alt="Create Firebase Project" />
 
 ## Required Tools for Firebase - Flutter integration
 
 ### Firebase CLI
 
-Installing Firebase CLI locally will help you manage, test and deploy Firebase project from your command line. It is required to perform Firebase <> Flutter integration as we will be modifying Firebase resources through our runtime environment.
+Installing Firebase CLI locally will help you manage, test and deploy Firebase project from your command line. It is required to perform Firebase-Flutter integration as we will be modifying Firebase resources through our runtime environment.
 
 To download and install Firebase CLI, you have two options:
 

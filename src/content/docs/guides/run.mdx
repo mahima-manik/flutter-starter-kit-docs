@@ -1,0 +1,65 @@
+---
+title: Run the Project
+description: Learn how to run the project
+---
+import { Image } from 'astro:assets';
+import flutterDoctor from '../../../assets/flutter-doctor.png';
+import deviceSelect from '../../../assets/device-select.png';
+import runButton from '../../../assets/run-button.png';
+import loginScreen from '../../../assets/login-screen.png';
+
+Flutter provider quite intensive guide on installation for different platforms: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install). Choose your development environment and target device to get started. 
+
+Here is a quick overview of the steps to run the project:
+
+1. Make sure you are working with a system with a minimum of 8GB RAM, 4 core CPU, and enough free disk space. This is to ensure enough resources and speed when running the project locally.
+2. You need to install Git for cloning the project and running some flutter commands. Here is the guide in case you need it: [Install Git](https://github.com/git-guides/install-git)
+3. Android Studio for Windows and XCode for Mac is necessary to debug and compile code. CocoaPods are additionally required for iOS.
+4. Download Flutter SDK and add it to the PATH. For Mac, CocoaPods is also required in the PATH.
+5. Download the device emulators for Android/iOS to run the code locally.
+6. Download your favorite IDE: VSCode or Cursor or Android Studio. I encourage you to try Cursor IDE. 
+
+## Verify Installation
+
+Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flutter is set up correctly. Don’t worry - everything may not be checked for you. It depends on the development environment you have chosen.
+
+<Image src={flutterDoctor} alt="Flutter Doctor" />
+
+## Start with Flutter Dev Kit
+
+1. Go to the directory where you want to place your project.
+    
+    ```bash
+    git clone https://github.com/mahima-manik/flutter-starter-kit.git
+    cd flutter-starter-kit
+    ```
+    
+
+2. To download all project dependencies listed in `pubspec.yaml`, run this:
+    
+    ```bash
+    flutter pub get
+    ```
+    
+    Notice it will generate `build/` folder in the project root directory
+    
+3. Select a device from the bottom-right corner of your VSCode editor. 
+    
+    <Image src={deviceSelect} alt="Flutter Devices" />
+    
+4. Go to `lib/main.dart`, you will see a debug and run button on the top-right corner of the IDE. It performs the build, installs, and runs the application on the selected device.
+    
+    <Image src={runButton} alt="Run button on top-right" />
+    
+    Run button on top-right
+    
+    Or you can run using the command: 
+    
+    ```bash
+    flutter run
+    ```
+    
+    <Image src={loginScreen} style="max-width: 50%;" alt="Login Screen"></Image>
+    
+
+Congratulations! 🥳 You have successfully run the project! Now we will make it feature-rich step by step.

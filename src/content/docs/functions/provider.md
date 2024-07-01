@@ -13,7 +13,7 @@ The Provider package is a popular state management solution in Flutter. It allow
 
 #### How it works?
 1. **Data Model:** The data model represents the state that you want to manage and share across your application. It contains the data and logic to update the state.
-2. **ChangeNotifier Class:** The ChangeNotifier class is a part of the Flutter framework that provides a simple way to manage state. It extends the ChangeNotifier class to provide the ability to notify listeners about state changes.
+2. **ChangeNotifier Class:** The ChangeNotifier class is a part of the Flutter framework that provides a simple way to manage state. It provides the ability to notify listeners about state changes.
 3. **Notify Listeners:** When the state changes, the ChangeNotifier class calls the `notifyListeners()` method to notify all registered listeners. This triggers a rebuild of the UI components that are listening to the state.
 4. **Consumer:** The Consumer widget listens to changes in the state and rebuilds the UI accordingly. It helps to optimize the performance by rebuilding only the specific parts of the UI that depend on the state.
 5. **ChangeNotifierProvider:** The ChangeNotifierProvider widget provides an instance of the ChangeNotifier class to the widget tree, making it available to all descendant widgets.
@@ -79,11 +79,11 @@ The Provider package is a popular state management solution in Flutter. It allow
     - In this example, `Provider.of` is used to get the `themeData` directly from the `ThemeProvider` without rebuilding the widget tree when the state changes.
     - Unlike `Consumer`, `Provider.of` does not automatically rebuild the UI when the state changes. It is more suitable for scenarios where you do not need continuous updates.
 ## Summary
-1. State Management: Managing the state of your application to ensure the UI updates in response to state changes.
-2. Provider Package: A popular state management solution in Flutter using ChangeNotifier to notify listeners about state changes.
-3. ThemeProvider: Manages the theme state, allowing toggling between light and dark modes.
-4. CartProvider: Manages the state of the shopping cart.
-5. AuthProvider: Manages the authentication state
+1. **State Management:** Managing the state of your application to ensure the UI updates in response to state changes.
+2. **Provider Package:** A popular state management solution in Flutter using ChangeNotifier to notify listeners about state changes.
+3. **ThemeProvider:** Manages the theme state, allowing toggling between light and dark modes.
+4. **CartProvider:** Manages the state of the shopping cart.
+5. **AuthProvider:** Manages the authentication state
 
 ## Reference
 1. https://docs.flutter.dev/data-and-backend/state-mgmt/intro
