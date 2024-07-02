@@ -42,12 +42,32 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     ```
     
     Notice it will generate `build/` folder in the project root directory
-    
+
 3. Select a device from the bottom-right corner of your VSCode editor. 
     
     <Image src={deviceSelect} alt="Flutter Devices" />
-    
-4. Go to `lib/main.dart`, you will see a debug and run button on the top-right corner of the IDE. It performs the build, installs, and runs the application on the selected device.
+
+4. Add environment variables in `assets/.env` file.
+    ```
+    STRIPE_SECRET_KEY=sk_test_complete_it
+    STRIPE_PUBLISHABLE_KEY=pk_test_complete_it
+    MERCHANT_NAME="Your Merchant Name"
+    RESEND_API_KEY=re_your_resend_api_key
+    SENDER_EMAIL_ADDRESS=your_email@email.com
+    ```
+
+    If you skip this step, you will see an error like this:
+    ```   
+    Launching lib/main.dart on Chrome in debug mode...
+    Error detected in pubspec.yaml:
+    No file or variants found for asset: assets/.env.
+
+    Failed to compile application.
+
+    Exited (1).
+    ```
+
+5. Go to `lib/main.dart`, you will see a debug and run button on the top-right corner of the IDE. It performs the build, installs, and runs the application on the selected device.
     
     <Image src={runButton} alt="Run button on top-right" />
     
@@ -58,7 +78,7 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     ```bash
     flutter run
     ```
-    
+    >>> Note: This may take few minutes to build and run for the first time.     
     <Image src={loginScreen} style="max-width: 50%;" alt="Login Screen"></Image>
     
 
