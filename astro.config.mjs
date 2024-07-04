@@ -20,6 +20,9 @@ export default defineConfig({
       }, {
         label: 'Setup Firebase',
         link: '/guides/firebase/'
+      }, {
+        label: 'Release',
+        link: '/guides/release/'
       }]
     }, {
       label: 'Functions',
