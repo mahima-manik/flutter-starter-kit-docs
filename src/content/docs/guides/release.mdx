@@ -36,6 +36,22 @@ Bundle ID is unique to the application on the App Store. Easist way to update th
 - Run `rename setAppName --targets ios,android --value "YourAppName"`. For iOS, this will update the `CFBundleName` in `Info.plist`. For Android, this will update the `android:label` in `AndroidManifest.xml`.
 - Run `rename setBundleId --targets ios,android --value "com.yourorgname.yourappname"`. For iOS, this will update the PRODUCT_BUNDLE_IDENTIFIER. For Android, it will update the `applicationId` in app's `build.gradle`.
 
+## Change app icon
+`flutter_launcher_icons` is tool to set launcher icons for Android and iOS.
+Added this code to pubspec.yaml
+```yaml
+dev_dependencies:
+    flutter_launcher_icons: latest_version
+
+flutter_launcher_icons:
+  image_path: assets/images/my_logo.png
+  android: launcher_icon
+  ios: true
+  min_sdk_android: 21
+```
+Run the command `flutter pub get`
+Run the command `flutter pub run flutter_launcher_icons` to generate icons for Android and iOS. 
+
 ## References
 1. https://docs.flutter.dev/deployment/android
 2. https://docs.flutter.dev/deployment/ios
