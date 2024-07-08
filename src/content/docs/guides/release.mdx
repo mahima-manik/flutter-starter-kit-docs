@@ -2,8 +2,7 @@
 title: Release
 description: How to release apps for Android and iOS
 ---
-## Change app name
-1. For Android, change the name in `android/app/src/main/AndroidManifest.xml`
+In Android, app name is set in `android/app/src/main/AndroidManifest.xml`
    ```xml
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
         <application
@@ -13,11 +12,29 @@ description: How to release apps for Android and iOS
         </application>
     </manifest>
     ```
-2. For iOS, change the name in `ios/Runner/Info.plist`
+In iOS, app name is set in `ios/Runner/Info.plist`
     ```xml
     <key>CFBundleName</key>
     <string>${applicationName}</string>
     ```
+
+## Rename app name and bundleID
+Bundle ID is unique to the application on the App Store. Easist way to update the default bundleID is to use [rename](https://pub.dev/packages/rename) tool.
+
+- Add rename to `pubspec.yaml`
+    ```yaml
+    dev_dependencies:
+        rename: latest_version
+    ```
+- Run `flutter pub get`
+- Run `flutter pub global activate rename`
+- Check the current AppName and Bundle ID
+    ```
+    rename getAppName --targets ios,android
+    rename getBundleId --targets ios,android
+    ```
+- Run `rename setAppName --targets ios,android --value "YourAppName"`. For iOS, this will update the `CFBundleName` in `Info.plist`. For Android, this will update the `android:label` in `AndroidManifest.xml`.
+- Run `rename setBundleId --targets ios,android --value "com.yourorgname.yourappname"`. For iOS, this will update the PRODUCT_BUNDLE_IDENTIFIER. For Android, it will update the `applicationId` in app's `build.gradle`.
 
 ## References
 1. https://docs.flutter.dev/deployment/android
