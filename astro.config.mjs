@@ -35,7 +35,13 @@ export default defineConfig({
       }, {
         label: 'Firestore',
         link: '/functions/firestore/'
-      }]
+      },{
+        label: 'Payments',
+        link: '/functions/payments/'
+      }, {
+        label: 'Email',
+        link: '/functions/emails/'
+      },]
     }, {
       label: 'Reference',
       autogenerate: {
