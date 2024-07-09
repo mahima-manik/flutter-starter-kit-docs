@@ -2,6 +2,16 @@
 title: Release
 description: How to release apps for Android and iOS
 ---
+
+import { Card } from '@astrojs/starlight/components';
+
+<Card title="Release steps" icon="information">
+    - Update app name and bundleID
+    - Update app icon
+    - Update splash screen
+    - Follow the release steps for Android and iOS
+</Card>
+
 In Android, app name is set in `android/app/src/main/AndroidManifest.xml`
    ```xml
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -25,8 +35,8 @@ Bundle ID is unique to the application on the App Store. Easiest way to update t
     dev_dependencies:
         rename: latest_version
     ```
-- Run `flutter pub get`
-- Run `flutter pub global activate rename`
+- Run `flutter pub get` to install the package.
+- Run `flutter pub global activate rename` to activate the package globally.
 - Check the current AppName and Bundle ID
     ```
     rename getAppName --targets ios,android

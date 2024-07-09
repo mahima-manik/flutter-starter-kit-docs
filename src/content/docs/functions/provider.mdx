@@ -2,6 +2,9 @@
 title: State management
 description: Some description
 ---
+
+import { Card } from '@astrojs/starlight/components';
+
 As explained in Flutter docs, consider state as "whatever data you need in order to rebuild your UI at any moment in time". 
 State management refers to the way you manage the state of your application. It is required to share data across different parts of the app. In Flutter, state management is crucial because it helps you manage the state of your widgets and ensures that your UI updates in response to state changes.
 
@@ -17,6 +20,14 @@ The Provider package is a popular state management solution in Flutter. It allow
 3. **Notify Listeners:** When the state changes, the ChangeNotifier class calls the `notifyListeners()` method to notify all registered listeners. This triggers a rebuild of the UI components that are listening to the state.
 4. **Consumer:** The Consumer widget listens to changes in the state and rebuilds the UI accordingly. It helps to optimize the performance by rebuilding only the specific parts of the UI that depend on the state.
 5. **ChangeNotifierProvider:** The ChangeNotifierProvider widget provides an instance of the ChangeNotifier class to the widget tree, making it available to all descendant widgets.
+
+<Card title="Usage" icon="information">
+We use provider in the starter kit to manage the state of the app.
+    - **ThemeProvider:** Manages the theme state, allowing toggling between light and dark modes
+    - **CartProvider:** Manages the state of the shopping cart
+    - **UserAuthProvider:** Manages the authentication state
+</Card>
+
 
 ## Code up
 1. Add `provider` dependency to `pubspec.yaml`
@@ -78,6 +89,7 @@ The Provider package is a popular state management solution in Flutter. It allow
     ```
     - In this example, `Provider.of` is used to get the `themeData` directly from the `ThemeProvider` without rebuilding the widget tree when the state changes.
     - Unlike `Consumer`, `Provider.of` does not automatically rebuild the UI when the state changes. It is more suitable for scenarios where you do not need continuous updates.
+
 ## Summary
 1. **State Management:** Managing the state of your application to ensure the UI updates in response to state changes.
 2. **Provider Package:** A popular state management solution in Flutter using ChangeNotifier to notify listeners about state changes.
