@@ -2,3 +2,22 @@
 title: Payments
 description: Payments with Stripe
 ---
+
+import { Card } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import stripeTestMode from '../../../assets/stripe-test-mode.png';
+
+<Card title="Steps for payments" icon="pencil">
+    - Create stripe customer
+    - Create payment intent
+    - Initiate payment sheet
+    - Present payment sheet to customer
+    - Handle payment success/failure
+</Card>
+
+## Prerequisites
+1. Create a Stripe account [here](https://stripe.com/)
+2. Turn ON test mode
+    <Image src={stripeTestMode} alt="Stripe Test mode" />
+3. Go to `Developers` -> `API Keys`. Copy the `Secret Key` and `Publishable Key`.
+4. Populate these values in `assets/.env` file for `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY`.
