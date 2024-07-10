@@ -3,17 +3,17 @@ title: Payments
 description: Payments with Stripe
 ---
 
-import { Card } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import stripeTestMode from '../../../assets/stripe-test-mode.png';
 
-<Card title="Steps for payments" icon="pencil">
+<Aside title="Stripe Payment" icon="pencil">
     - Create stripe customer
     - Create payment intent
     - Initiate payment sheet
     - Present payment sheet to customer
     - Handle payment success/failure
-</Card>
+</Aside>
 
 ## Prerequisites
 1. Create a Stripe account [here](https://stripe.com/)

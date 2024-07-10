@@ -2,3 +2,20 @@
 title: Email Service
 description: Send emails to users
 ---
+import { Aside } from '@astrojs/starlight/components';
+
+Add http dependency to your `pubspec.yaml` file:
+```yaml
+dependencies:
+  http: latest_version
+```
+Run `flutter pub get` to install the packages.
+
+2. Create a Resend account <a href="https://resend.com/" target="_blank">here</a>
+3. Get the API key from <a href="https://resend.com/api-keys" target="_blank">here</a>
+4. Create a sender email address <a href="https://resend.com/emails/new" target="_blank">here</a>
+5. Populate these values in `assets/.env` file for `RESEND_API_KEY`, `SENDER_EMAIL_ADDRESS`
+
+<Aside title="Note">
+  Resend offers a free tier for 3000 emails per month. You can check their pricing <a href="https://resend.com/pricing" target="_blank">here</a>.
+</Aside>
