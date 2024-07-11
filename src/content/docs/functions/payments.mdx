@@ -7,8 +7,10 @@ import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import stripeTestMode from '../../../assets/stripe-test-mode.png';
 
+The `PaymentService` class handles the Stripe payment integration. It includes methods to create a customer, generate a payment intent, and initialize and present the payment sheet.
+
 <Aside title="Stripe Payment" icon="pencil">
-    - Create stripe customer
+    - Create stripe customer (Required for )
     - Create payment intent
     - Initiate payment sheet
     - Present payment sheet to customer
@@ -21,3 +23,28 @@ import stripeTestMode from '../../../assets/stripe-test-mode.png';
     <Image src={stripeTestMode} alt="Stripe Test mode" />
 3. Go to `Developers` -> `API Keys`. Copy the `Secret Key` and `Publishable Key`.
 4. Populate these values in `assets/.env` file for `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY`.
+
+## Steps
+
+`flutter_stripe` library is used to handle payments. Steps in the documentation were followed <a href="https://pub.dev/packages/flutter_stripe" target="_blank">here</a>. It's already included in the project. 
+```dart
+await dotenv.load(fileName: "assets/.env");
+Stripe.publishableKey = dotenv.get('STRIPE_PUBLISHABLE_KEY');
+```
+`dotenv` package is used to load environment variables from `.env` file.
+
+`http` package is used to send requests to Stripe API, like `createCustomer`, `createPaymentIntent`, etc. 
+
+### Regulatory requirements in India
+
+For accepting international payments mandante sending following fields:
+- `buyer's name`
+- `billing address`
+- `description` of the product/service
+- `shipping address` if shipping is required
+
+We supply these parameters to Stripe in `_createStripeCustomer` method and the customerID created is used to create a payment intent.
+
+**Note:** If the buyer’s name, billing address, shipping address or description isn’t provided, the payment will fail.
+
+More information on regulatory requirements in India can be found <a href="https://docs.stripe.com/india-accept-international-payments" target="_blank">here</a> and <a href="https://support.stripe.com/questions/accepting-international-payments-from-stripe-accounts-in-india" target="_blank">here</a>.

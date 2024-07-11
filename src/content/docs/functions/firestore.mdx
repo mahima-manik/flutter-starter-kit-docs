@@ -34,6 +34,7 @@ service cloud.firestore {
 ```
 
 Read more about security <a href="https://firebase.google.com/docs/firestore/security/rules-structure" target="_blank">here</a>
+
 ## Firebase Storage
 
 It is a storage service used to store and retrieve user generated content. They are generally used to store big blobs of data that don't change often like photos, audio, videos, docs, etc.
@@ -49,6 +50,8 @@ Once the bucket is created, data can be organized into directories based on sche
 
   📸 **Product images:** Used for storing product images. It is stored in `products/$productId/$imageName.$fileExtension`
 </Card>
+
+**Note:** Firebase Storage creates folders and subfolders based on the path provided, if the path does not already exist.
 
 ### Security Rules
 For now, we will be allowing all users to read and write to the storage. This is not recommended for production:
