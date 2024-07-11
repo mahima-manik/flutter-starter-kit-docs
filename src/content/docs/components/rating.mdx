@@ -2,3 +2,46 @@
 title: Product Rating
 description: Component to display star ratings for products.
 ---
+import starRatingLight from '../../../assets/star-rating-light.png';
+import starRatingDark from '../../../assets/star-rating-dark.png';
+import { Image } from 'astro:assets';
+
+Import StarRating in any of the pages. It takes following parameters:
+1. **Rating:** The rating of the product
+2. **NumberOfRatings:** The total number of ratings on the product. If not provided, the rating is displayed as is. If total ratings is provided, rating number is not displayed. Idea here is to just display one text and show the rating in stars.
+3. **Size:** The size of the star rating (default is 24)
+
+```dart
+import '../components/star_rating.dart';
+
+class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            StarRating(rating: 1, starSize: 40),
+            StarRating(rating: 2, starSize: 40),
+            StarRating(rating: 3, starSize: 40, numberOfRatings: 86),
+            StarRating(rating: 4.5, starSize: 40),
+            StarRating(rating: 5, starSize: 40, numberOfRatings: 100),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+- Text Size is in propotion to star size.
+- If the rating is 3.5, it will display 3 full and 1 half star.
+- If the rating is 3.75, it will display 3 full and 1 half star.
+- If the rating is 4.25, it will display 4 full stars.
+- If the rating is 4.5, it will display 4 full and 1 half star.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={starRatingLight} style={{ maxWidth: '48%' }} alt="Star Rating" />
+    <Image src={starRatingDark} style={{ maxWidth: '48%' }} alt="Star Rating" />
+</div>
