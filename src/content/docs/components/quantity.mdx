@@ -1,0 +1,40 @@
+---
+title: Quantity Selector
+description: Component to display quantity selector.
+---
+
+import quantityLight from '../../../assets/info-page-light.png';
+import quantityDark from '../../../assets/info-page-dark.png';
+import cartCountDark from '../../../assets/cart-count.png';
+import { Image } from 'astro:assets';
+
+The `QuantitySelector` widget provides a user interface for selecting a quantity. It includes buttons to increment and decrement the quantity, and an "Add" button when the quantity is zero.
+
+### Usage
+Import `QuantitySelector` in any page to allow users to select a quantity. It takes the following parameters:
+- `initialQuantity`: An optional integer representing the initial quantity. It allows you to set the starting quantity.
+- `onQuantityChanged`: A required callback function that is called whenever the quantity changes.
+
+## Display
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={quantityLight} style={{ maxWidth: '48%' }} alt="Quantity Selector" />
+    <Image src={quantityDark} style={{ maxWidth: '48%' }} alt="Quantity Selector" />
+</div>
+
+### Features
+- **Increment and Decrement Buttons**: Users can increase or decrease the quantity using the "+" and "-" buttons.
+- **Add Button**: When the quantity is zero, an "Add" button is displayed. Clicking it sets the quantity to 1.
+- **Callback on Quantity Change**: The `onQuantityChanged` callback is triggered whenever the quantity changes, allowing the parent widget to respond to the change.
+
+### Notes
+- Ensure that the `onQuantityChanged` callback is provided to handle quantity changes.
+- The widget uses `setState` to manage the internal state of the quantity, ensuring the UI updates correctly.
+- The quantity cannot go below zero, as the decrement button is disabled when the quantity is zero.
+
+## Integration with Cart Icon
+
+Cart updates with the total number of products added to the cart. This can be seen as a count on the cart icon from any product page or home page. User can also update the quantity from home page or product page.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={cartCountDark} style={{ maxWidth: '48%' }} alt="Cart Count" />
+</div>

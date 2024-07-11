@@ -45,15 +45,18 @@ export default defineConfig({
     }, {
       label: 'Components',
       items: [{
-        label: 'Rating',
+        label: 'Star Rating',
         link: '/components/rating/'
+      },  {
+        label: 'Image Gallery',
+        link: '/components/gallery/'
       }, {
-        label: 'Tile',
+        label: 'Expandible Tile',
         link: '/components/tile/'
       }, {
-        label: 'Gallery',
-        link: '/components/gallery/'
-      }]
+        label: 'Quantity Selector',
+        link: '/components/quantity/'
+      }, ]
     }, {
       label: 'Reference',
       autogenerate: {
