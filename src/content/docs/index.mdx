@@ -20,24 +20,41 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
 
+
+<CardGrid>
+	<Card title='What it contains?' icon='star'>
+		This kit contains most useful screens, features, components and user journeys which is defined required to build any mobile app.
+		- Firebase Integration for user authentication and storage
+		- Stripe integration for payment processing
+		- Resend integration for sending emails
+		- State Management for app state like user login, cart, theme and checkout
+		- Reusable UI Components for building UI
+	</Card>
+	<Card title='Why to use?' icon='star'>
+		- Most common and important user journeys are already covered in this kit. 
+		- You can focus on building on the business logic specific to their application.
+		- Easy to setup and run
+		- All the steps to run and build the project are documented.
+		- Errors encountered during common integrations can be frustrating. This kit has been tested and is known to work with all of them.
+	</Card>
+</CardGrid>
+
 # Features
 
 <Tabs>
   <TabItem label="Authentication">
-      User can login with email and password, and Google. User profile picture is updated and stored in Firebase.
-
-	  The login system is built with security in mind, using Firebase Authentication. It supports:
+      The login system is built using Firebase Authentication. User can login with email and password, and Google. User profile picture is updated and stored in Firebase. It supports:
 
       <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Login and register using Email and password</div>
 	  <br/>
       <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Google sign-in on both iOS and Android</div>
       <br/>
-      <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Profile picture/display name updates</div>
+      <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Profile picture/display name/password updates</div>
 	  <br/>
       <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Secure storage of user data in Firebase</div>
   </TabItem>
   <TabItem label="State Management">
-      Handle app state like user login, cart, and checkout across all the pages and components in the app.
+      It is useful to share some data in the app needs to be shared across multiple pages. We handle app state updates like user login, cart, and checkout across all the pages and components in the app.
 	  
 	  <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Home page is only visible when user is logged in.</div>
 	  <br/>
@@ -92,14 +109,3 @@ import { Icon } from '@astrojs/starlight/components';
     <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Including components like buttons, cards, forms, and more</div>
   </TabItem>
 </Tabs>
-
-## Why Flutter Starter Kit?
-
-<Card>
-	This starter kit comes with a lot of features and integration that will save you time to debug and build your app.
-	- Easy to run
-	- Good starting point
-	- Thorough documentation
-	- Fast to build
-</Card>
-
