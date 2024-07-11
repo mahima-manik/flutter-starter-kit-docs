@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import authOptions from '../../../assets/auth-options.png';
 import emailPass from '../../../assets/email-pass.png';
 import gSignin from '../../../assets/gsignin.png';
+import signinScreen from '../../../assets/signin-screen.png';
 import authSetup from '../../../assets/auth-setup.png';
 import { Card, Aside } from '@astrojs/starlight/components';
 
@@ -26,8 +27,14 @@ Firebase offers multiple authentication methods. Enable Email/Password and Googl
 2. From the **Sign in method** page, enable the **Email/password sign-in** method and click **Save**.
     <Image src={emailPass} alt="Email/Password Sign-In" />
 3. Enable Google signin and provide your support email. Save and proceed.    
-    <Image src={gSignin} alt="Google Sign-In" />
+    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '100%' }}>
+        <Image src={gSignin} alt="Google Sign-In" />
+    </div>
     
+    The public facing name for the project is shown when the Google sign in method is used on this screen:
+    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '100%' }}>
+        <Image src={signinScreen} alt="Sign-In Screen" style={{ maxWidth: '48%' }} />
+    </div>
     `google_sign_in` package is used in Flutter to enable authentication. For authentication on IOS device, you need to follow the steps here: https://pub.dev/packages/google_sign_in_ios#ios-integration. 
     
     You should see authentication setup something like this:

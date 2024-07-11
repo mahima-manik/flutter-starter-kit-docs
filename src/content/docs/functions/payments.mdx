@@ -9,14 +9,6 @@ import stripeTestMode from '../../../assets/stripe-test-mode.png';
 
 The `PaymentService` class handles the Stripe payment integration. It includes methods to create a customer, generate a payment intent, and initialize and present the payment sheet.
 
-<Aside title="Stripe Payment" icon="pencil">
-    - Create stripe customer (Required for )
-    - Create payment intent
-    - Initiate payment sheet
-    - Present payment sheet to customer
-    - Handle payment success/failure
-</Aside>
-
 ## Prerequisites
 1. Create a Stripe account [here](https://stripe.com/)
 2. Turn ON test mode
@@ -34,6 +26,14 @@ Stripe.publishableKey = dotenv.get('STRIPE_PUBLISHABLE_KEY');
 `dotenv` package is used to load environment variables from `.env` file.
 
 `http` package is used to send requests to Stripe API, like `createCustomer`, `createPaymentIntent`, etc. 
+
+<Aside title="Stripe Payment" icon="pencil">
+    - Create stripe customer (Required for )
+    - Create payment intent
+    - Initiate payment sheet
+    - Present payment sheet to customer
+    - Handle payment success/failure
+</Aside>
 
 ### Regulatory requirements in India
 
