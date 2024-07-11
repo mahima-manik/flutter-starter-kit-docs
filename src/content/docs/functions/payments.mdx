@@ -6,8 +6,17 @@ description: Payments with Stripe
 import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import stripeTestMode from '../../../assets/stripe-test-mode.png';
+import orderConfirmLight from '../../../assets/order-confirm.png';
+import paymentSheet from '../../../assets/payment-sheet.png';
 
 The `PaymentService` class handles the Stripe payment integration. It includes methods to create a customer, generate a payment intent, and initialize and present the payment sheet.
+
+## Display 
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={paymentSheet} style={{ maxWidth: '48%' }} alt="Payment Sheet" />
+    <Image src={orderConfirmLight} style={{ maxWidth: '48%' }} alt="Order Confirmation" />
+</div>
 
 ## Prerequisites
 1. Create a Stripe account [here](https://stripe.com/)
@@ -48,3 +57,10 @@ We supply these parameters to Stripe in `_createStripeCustomer` method and the c
 **Note:** If the buyer’s name, billing address, shipping address or description isn’t provided, the payment will fail.
 
 More information on regulatory requirements in India can be found <a href="https://docs.stripe.com/india-accept-international-payments" target="_blank">here</a> and <a href="https://support.stripe.com/questions/accepting-international-payments-from-stripe-accounts-in-india" target="_blank">here</a>.
+
+## Security
+To ensure the security of payment processing, it is recommended to handle sensitive operations, such as creating payment intents, on the backend. This approach helps to protect your API keys and other sensitive information from being exposed.
+
+In this project, the payment intent is created in the `payment_service.dart` file. However, for a more secure implementation, consider moving this logic to a backend service. This backend service can then communicate with the Stripe API and return the necessary information to your frontend application.
+
+More information can be found here <a href="https://docs.stripe.com/payments/accept-a-payment?platform=android#add-server-endpoint" target="_blank">here</a>.
