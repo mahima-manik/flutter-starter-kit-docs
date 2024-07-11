@@ -2,3 +2,58 @@
 title: Product Image Gallery
 description: Component to display a gallery of product images.
 ---
+import galleryLight from '../../../assets/image-gallery-light.png';
+import galleryDark from '../../../assets/image-gallery-dark.png';
+import { Image } from 'astro:assets';
+
+The `ImageGallery` widget displays a gallery of images in a swipeable format. It includes a page indicator to show the current image being viewed.
+
+## Display
+Import `ImageGallery` in any page to display a gallery of images. It takes following parameters:
+- `imageUrls`: An array of image urls to display.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={galleryLight} style={{ maxWidth: '48%' }} alt="Image Gallery" />
+    <Image src={galleryDark} style={{ maxWidth: '48%' }} alt="Image Gallery" />
+</div>
+
+## Features
+- **Swipeable Images**: Users can swipe left or right to navigate through the images. The widget uses a `PageController` to manage the swiping behavior.
+- **Page Indicator**: A row of dots at the bottom indicates the current image being viewed. The color of the page indicator changes based on the current page, using the primary color of the theme for the active page and grey for inactive pages.
+- **Automatic State Management**: The widget automatically updates the current page indicator as the user swipes through the images.
+
+### Lifecycle
+- **initState**: Initializes the `PageController` and sets up a listener to update the current page.
+- **dispose**: Disposes of the `PageController` to free up resources.
+
+### Notes
+- Ensure that the URLs provided in `imageUrls` are valid and accessible.
+- The images are displayed using `Image.network`, which requires an internet connection to fetch the images.
+
+## Usage
+
+```dart
+import { ImageGallery } from '../components/image_gallery.dart';
+
+class GalleryDemoPage extends StatelessWidget {
+  const GalleryDemoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const Center(
+        child: Padding(
+          child: ImageGallery(
+            imageUrls: [
+              'https://picsum.photos/300/300',
+              'https://picsum.photos/400/300',
+              'https://picsum.photos/300/500',
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+```

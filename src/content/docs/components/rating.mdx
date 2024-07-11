@@ -7,15 +7,37 @@ import starRatingDark from '../../../assets/star-rating-dark.png';
 import { Image } from 'astro:assets';
 
 Import StarRating in any of the pages. It takes following parameters:
-1. **Rating:** The rating of the product
-2. **NumberOfRatings:** The total number of ratings on the product. If not provided, the rating is displayed as is. If total ratings is provided, rating number is not displayed. Idea here is to just display one text and show the rating in stars.
-3. **Size:** The size of the star rating (default is 24)
+- `rating`: A double value representing the rating.
+- `starSize`: (Optional) A double value to set the size of the stars.
+- `numberOfRatings`: (Optional) An integer value representing the number of ratings.
 
+## Display
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={starRatingLight} style={{ maxWidth: '48%' }} alt="Star Rating" />
+    <Image src={starRatingDark} style={{ maxWidth: '48%' }} alt="Star Rating" />
+</div>
+
+## Features
+- **Full, Half, and Empty Stars**: The widget displays full stars, half stars, and empty stars based on the provided rating.
+- **Optional Number of Ratings**: If `numberOfRatings` is provided, it displays the number of ratings instead of the rating value.
+- **Customizable Star Size**: The size of the stars can be customized using the `starSize` parameter.
+
+### Customization
+- **Star Size**: The `starSize` parameter allows you to set the size of the stars.
+- **Rating Display**: If `numberOfRatings` is provided, it displays the number of ratings. Otherwise, it displays the rating value formatted to one decimal place.
+- **Theme Support**: The text color for the number of ratings adapts to the current theme, using a light blue color in dark mode and blue in light mode.
+
+### Notes
+- Ensure that the `rating` value is between 0 and 5 for accurate display.
+- The widget uses the `Provider` package to access the current theme. Make sure to set up the `ThemeProvider` correctly in your application.
+
+## Usage
 ```dart
 import '../components/star_rating.dart';
 
-class DemoPage extends StatelessWidget {
-  const DemoPage({super.key});
+class StarRatingDemo extends StatelessWidget {
+  const StarRatingDemo({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,14 +56,3 @@ class DemoPage extends StatelessWidget {
   }
 }
 ```
-
-- Text Size is in propotion to star size.
-- If the rating is 3.5, it will display 3 full and 1 half star.
-- If the rating is 3.75, it will display 3 full and 1 half star.
-- If the rating is 4.25, it will display 4 full stars.
-- If the rating is 4.5, it will display 4 full and 1 half star.
-
-<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-    <Image src={starRatingLight} style={{ maxWidth: '48%' }} alt="Star Rating" />
-    <Image src={starRatingDark} style={{ maxWidth: '48%' }} alt="Star Rating" />
-</div>
