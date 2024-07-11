@@ -43,6 +43,18 @@ export default defineConfig({
         link: '/functions/emails/'
       },]
     }, {
+      label: 'Components',
+      items: [{
+        label: 'Rating',
+        link: '/components/rating/'
+      }, {
+        label: 'Tile',
+        link: '/components/tile/'
+      }, {
+        label: 'Gallery',
+        link: '/components/gallery/'
+      }]
+    }, {
       label: 'Reference',
       autogenerate: {
         directory: 'reference'
