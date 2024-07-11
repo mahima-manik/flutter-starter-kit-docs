@@ -57,11 +57,6 @@ export default defineConfig({
         label: 'Quantity Selector',
         link: '/components/quantity/'
       }, ]
-    }, {
-      label: 'Reference',
-      autogenerate: {
-        directory: 'reference'
-      }
     }]
   }), mdx()]
 });
