@@ -6,8 +6,15 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [starlight({
     title: 'Flutter Starter Kit',
+    description: 'A starter kit for building Flutter apps. Ship your Flutter app with Firebase in days, not months',
+    logo: {
+      src: './src/assets/sample_logo.png',
+    },
+    favicon: './src/assets/sample_logo.png',
     social: {
-      github: 'https://github.com/mahima-manik/flutter-starter-kit'
+      github: 'https://github.com/mahima-manik/flutter-starter-kit',
+      linkedin: 'https://www.linkedin.com/in/mahimamanik/',
+      twitter: 'https://twitter.com/mahima_manik',
     },
     sidebar: [{
       label: 'Get Started',
