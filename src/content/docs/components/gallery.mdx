@@ -21,6 +21,8 @@ Import `ImageGallery` in any page to display a gallery of images. It takes follo
 - **Swipeable Images**: Users can swipe left or right to navigate through the images. The widget uses a `PageController` to manage the swiping behavior.
 - **Page Indicator**: A row of dots at the bottom indicates the current image being viewed. The color of the page indicator changes based on the current page, using the primary color of the theme for the active page and grey for inactive pages.
 - **Automatic State Management**: The widget automatically updates the current page indicator as the user swipes through the images.
+- **Image Loading Indicator**: Displays a `CircularProgressIndicator` while images are loading.
+- **Error Handling**: Displays an error icon if an image fails to load.
 
 ### Lifecycle
 - **initState**: Initializes the `PageController` and sets up a listener to update the current page.
@@ -29,6 +31,7 @@ Import `ImageGallery` in any page to display a gallery of images. It takes follo
 ### Notes
 - Ensure that the URLs provided in `imageUrls` are valid and accessible.
 - The images are displayed using `Image.network`, which requires an internet connection to fetch the images.
+- The `loadingBuilder` and `errorBuilder` provide a way to handle image loading and error states gracefully.
 
 ## Usage
 
