@@ -19,6 +19,7 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 
 <CardGrid>
@@ -109,3 +110,34 @@ import { Icon } from '@astrojs/starlight/components';
     <div style={{ display: 'inline-flex', alignItems: 'center' }}><Icon name="approve-check" color="green" /> &ensp; Including components like buttons, cards, forms, and more</div>
   </TabItem>
 </Tabs>
+
+<div style={{ textAlign: 'center' }}>
+  ## FAQ
+</div>
+<br/>
+
+<CardGrid>
+  <Card title="What is the language used to build apps?" icon="information">
+    This project is built using Flutter, an open-source UI software development toolkit created by Google. 
+	
+	Flutter uses the Dart programming language, which is optimized for building fast, high-performance mobile applications.
+  </Card>
+
+  <Card title="Do I need to write separate code for Android and iOS?" icon="information">
+    Flutter is a powerful cross-platform framework that allows you to write code once and deploy it across multiple platforms, including Android, iOS, and the Web. This significantly reduces development time and effort.
+	
+	While Flutter supports various platforms, this project primarily focuses on mobile applications, ensuring a seamless experience on both Android and iOS devices.
+  </Card>
+
+  <Card type="tip" title="What will I get here?" icon="information">
+    You will get access to Github repository containing the code for the app and its documentation. Documentation contains all the steps to run, integrate with your Firebase, make changes and publish the app. 
+	
+	This kit contains the most useful screens, features, components, and user journeys required to build any mobile app. It includes pre-built widgets and templates that can be easily customized to fit your specific needs, helping you to accelerate your development process.
+  </Card>
+
+  <Card type="tip" title="Will there be additional cost in publishing the app?" icon="information">
+    While this starter kit provides all the necessary components to build your app, there may be additional costs associated with publishing your app on app stores.
+	
+	For example, Google Play Store and App Store have their own developer account fees and policies. Firebase cost depends on the plan you choose.
+  </Card>
+</CardGrid>
