@@ -12,7 +12,7 @@ export default defineConfig({
     },
     favicon: './src/assets/logo.png',
     social: {
-      github: 'https://github.com/mahima-manik/flutter-starter-kit',
+      github: 'https://github.com/mahima-manik/',
       linkedin: 'https://www.linkedin.com/in/mahimamanik/',
       twitter: 'https://twitter.com/mahima_manik',
     },
