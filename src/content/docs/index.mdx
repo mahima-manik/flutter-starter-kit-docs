@@ -20,7 +20,8 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Icon } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
-
+import logo from '../../assets/logo.png';
+import { Image } from 'astro:assets';
 
 <CardGrid>
 	<Card title='What it contains?' icon='star'>
@@ -167,3 +168,20 @@ import { Aside } from '@astrojs/starlight/components';
     </div>
   </Card>
 </div>
+
+<br/><br/>
+
+<footer style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', borderTop: '1px solid #e9ecef' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <Image src={logo} alt="Flutter Starter Kit" style={{ width: '30px', marginRight: '10px', marginTop: '15px', verticalAlign: 'middle' }} />
+      <div style={{ verticalAlign: 'text-top' }}>Flutter Starter Kit</div>
+    </div>
+    <div>Copyright © 2024 - All rights reserved</div>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+    <a href="/terms-of-service" style={{ marginBottom: '10px', color: '#0D6EFD', textDecoration: 'none' }}>Terms of services</a>
+    <a href="/privacy-policy" style={{ marginBottom: '10px', color: '#0D6EFD', textDecoration: 'none' }}>Privacy policy</a>
+    <a href="/licenses" style={{ color: '#0D6EFD', textDecoration: 'none' }}>Licenses</a>
+  </div>
+</footer>
