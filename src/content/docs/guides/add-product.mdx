@@ -19,19 +19,20 @@ Go to Firebase Storage -> products -> create a folder with the same name as the 
 
 When we display product details, we will display the images from this Firebase Storage folder. So, it is important to keep the folder name same as the product document ID.
 
+That's it! You have successfully added a product to the store. It will start to display on the home page once you restart the app.
+
 ## Product Model
 Model for the product is defined in `models/product.dart`.
 
 ```dart
-  Product({
-    required this.id,
-    required this.name, 
-    required this.description, 
-    required this.price, 
-    this.rating = 0.0,
-    List<String>? images
-  }) : images = images ?? ['assets/images/default_product_image.png'];
+  class Product {
+    final String id;
+    final String name;
+    final String description;
+    final double price;
+    final double rating;
+    final List<String> images;
+  }
 ```
 
 You can add/remove the fields required as per your application requirements.
-
