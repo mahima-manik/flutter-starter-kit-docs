@@ -18,7 +18,7 @@ export default defineConfig({
     },
     sidebar: [{
       label: 'Get Started',
-      link: '/get_started/'
+      link: '/get-started/'
     }, {
       label: 'Guides',
       items: [{
@@ -28,9 +28,12 @@ export default defineConfig({
         label: 'Setup Firebase',
         link: '/guides/firebase/'
       }, {
+        label: 'Add Product',
+        link: '/guides/add-product/'
+      }, {
         label: 'Release',
         link: '/guides/release/'
-      }]
+      },]
     }, {
       label: 'Functions',
       items: [{
