@@ -5,6 +5,7 @@ description: Add Product
 
 import productDocument from '../../../assets/product-document.png';
 import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
 
 In this project, we store all the product related information in the `products` collection. 
 
@@ -18,6 +19,12 @@ Copy the "document ID" of the product document you just created on Firestore
 Go to Firebase Storage -> products -> create a folder with the same name as the document ID. Add all the product images to this folder.
 
 When we display product details, we will display the images from this Firebase Storage folder. So, it is important to keep the folder name same as the product document ID.
+
+<Aside>
+  If no product images are provided, the default product image will be displayed. Default image is present in Firebase Storage's `products` folder by the name `default-product-image.png`.
+
+  You must replace the default image with the product image you want to display as default for your products.
+</Aside>
 
 That's it! You have successfully added a product to the store. It will start to display on the home page once you restart the app.
 
