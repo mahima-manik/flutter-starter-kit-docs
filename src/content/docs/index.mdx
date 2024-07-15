@@ -5,7 +5,7 @@ template: splash
 hero:
   tagline: Easy to use mobile starter kit for building your Flutter app with Firebase
   image:
-    file: ../../assets/hero.png
+    file: ../../assets/hero_mobile.png
   actions:
     - text: Buy Now
       link: https://buy.stripe.com/eVa4kigVB4ddemA7st
@@ -153,20 +153,68 @@ import { Image } from 'astro:assets';
   ## Pricing
 </div>
 <br/>
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <Card title="Welcome offer: $20">
-    <ul style={{ listStyleType: 'none', padding: 0 }}>
-      <li>- Lifetime access to Github repo access</li>
-      <li>- Documentation</li>
-      <li>- Feature updates</li>
-      <li>- Support over email</li>
+
+<div style={{
+  display: 'flex', 
+  justifyContent: 'center', 
+  borderRadius: '10px', 
+  border: '2px solid',
+  maxWidth: '500px',
+  margin: 'auto'
+}}>
+  <div style={{ 
+    textAlign: 'center',
+    padding: '20px',
+    borderRadius: '10px',
+    width: '100%'
+  }}>
+    <div style={{
+      fontSize: '24px',
+      textDecoration: 'line-through',
+      color: '#AAA',
+      display: 'inline-block',
+      marginRight: '10px'
+    }}>$149</div>
+    <div style={{
+      fontSize: '40px',
+      fontWeight: 'bold',
+      display: 'inline-block'
+    }}>$39 <span style={{ fontSize: '24px' }}>USD</span></div>
+    <ul style={{ 
+      listStyleType: 'none', 
+      padding: 0, 
+      textAlign: 'center',
+      marginTop: '20px'
+    }}>
+      <li>✓ Flutter and Firebase starter kit</li>
+	  <li>✓ Documentation and tutorials</li>
+      <li>✓ Firebase integration for auth, storage, and more</li>
+      <li>✓ Stripe integration for payment</li>
+      <li>✓ Resend integration for emails</li>
+      <li>✓ UI components</li>
+      <li>✓ State management</li>
     </ul>
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <button onclick=" window.open('https://buy.stripe.com/eVa4kigVB4ddemA7st', '_blank')" style={{ padding: '10px 20px', backgroundColor: '#0D6EFD', color: '#FFF', border: 'none', borderRadius: '25px', cursor: 'pointer' }}>
+    <div style={{ 
+      textAlign: 'center', 
+      marginTop: '20px'
+    }}>
+      <button onclick="window.open('https://buy.stripe.com/eVa4kigVB4ddemA7st', '_blank')" style={{ 
+        padding: '10px 20px', 
+        backgroundColor: 'var(--sl-color-accent)', 
+        color: '#FFFFFF', 
+		border: 'none', 
+        borderRadius: '25px', 
+        cursor: 'pointer'
+      }}>
         Buy Now
       </button>
     </div>
-  </Card>
+    <div style={{ 
+      fontSize: '12px', 
+      color: '#AAA',
+      marginTop: '10px'
+    }}>Pay once. Build unlimited projects!</div>
+  </div>
 </div>
 
 <br/><br/>
@@ -180,8 +228,8 @@ import { Image } from 'astro:assets';
     <div>Copyright © 2024 - All rights reserved</div>
   </div>
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-    <a href="/terms-of-service" style={{ marginBottom: '10px', color: '#0D6EFD', textDecoration: 'none' }}>Terms of services</a>
-    <a href="/privacy-policy" style={{ marginBottom: '10px', color: '#0D6EFD', textDecoration: 'none' }}>Privacy policy</a>
-    <a href="/licenses" style={{ color: '#0D6EFD', textDecoration: 'none' }}>Licenses</a>
+    <a href="/terms-of-service" style={{ marginBottom: '10px', color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Terms of services</a>
+    <a href="/privacy-policy" style={{ marginBottom: '10px', color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Privacy policy</a>
+    <a href="/licenses" style={{ color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Licenses</a>
   </div>
 </footer>
