@@ -173,7 +173,8 @@ import { Image } from 'astro:assets';
       textDecoration: 'line-through',
       color: '#AAA',
       display: 'inline-block',
-      marginRight: '10px'
+      marginRight: '10px',
+      fontWeight: 'bold'
     }}>$149</div>
     <div style={{
       fontSize: '40px',
@@ -199,12 +200,13 @@ import { Image } from 'astro:assets';
       marginTop: '20px'
     }}>
       <button onclick="window.open('https://buy.stripe.com/eVa4kigVB4ddemA7st', '_blank')" style={{ 
-        padding: '10px 20px', 
+        padding: '10px 60px', 
         backgroundColor: 'var(--sl-color-accent)', 
         color: '#FFFFFF', 
-		border: 'none', 
-        borderRadius: '25px', 
-        cursor: 'pointer'
+        border: 'none', 
+        borderRadius: '5px', 
+        cursor: 'pointer',
+        fontWeight: 'bold'
       }}>
         Buy Now
       </button>
@@ -219,7 +221,14 @@ import { Image } from 'astro:assets';
 
 <br/><br/>
 
-<footer style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', borderTop: '1px solid #e9ecef' }}>
+<footer style={{
+  display: 'flex', 
+  flexDirection: 'row', 
+  justifyContent: 'space-between', 
+  alignItems: 'center', 
+  padding: '20px', 
+  borderTop: '1px solid var(--sl-color-gray-5)',
+}}>
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Image src={logo} alt="Flutter Starter Kit" style={{ width: '30px', marginRight: '10px', marginTop: '15px', verticalAlign: 'middle' }} />
@@ -227,9 +236,24 @@ import { Image } from 'astro:assets';
     </div>
     <div>Copyright © 2024 - All rights reserved</div>
   </div>
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-    <a href="/terms-of-service" style={{ marginBottom: '10px', color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Terms of services</a>
-    <a href="/privacy-policy" style={{ marginBottom: '10px', color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Privacy policy</a>
-    <a href="/licenses" style={{ color: 'var(--sl-color-accent)', textDecoration: 'none' }}>Licenses</a>
+  <div style={{
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'right'
+  }}>
+    <a href="/terms-of-service" style={{
+      marginBottom: '10px', 
+      color: 'var(--sl-color-accent)', 
+      textDecoration: 'none'
+    }}>Terms of services</a>
+    <a href="/privacy-policy" style={{
+      marginBottom: '10px', 
+      color: 'var(--sl-color-accent)', 
+      textDecoration: 'none'
+    }}>Privacy policy</a>
+    <a href="/licenses" style={{
+      color: 'var(--sl-color-accent)', 
+      textDecoration: 'none'
+    }}>Licenses</a>
   </div>
 </footer>
