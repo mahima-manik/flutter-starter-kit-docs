@@ -6,7 +6,9 @@ import { Image } from 'astro:assets';
 import flutterDoctor from '../../../assets/flutter-doctor.png';
 import deviceSelect from '../../../assets/device-select.png';
 import runButton from '../../../assets/run-button.png';
-import loginScreen from '../../../assets/login-screen.png';
+import loginScreenLight from '../../../assets/login-screen-light.png';
+import loginScreenDark from '../../../assets/login-screen-dark.png';
+
 
 Flutter provider quite an extensive guide on installation for different platforms: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install). Choose your development environment and target device to get started. 
 
@@ -81,7 +83,10 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     
     > Note: This may take few minutes to build and run for the first time.     
  
-    <Image src={loginScreen} style="max-width: 50%;" alt="Login Screen"></Image>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Image src={loginScreenLight} style="max-width: 45%;" alt="Login Screen"></Image>
+        <Image src={loginScreenDark} style="max-width: 45%;" alt="Login Screen"></Image>
+    </div>
     
 
 Congratulations! 🥳 You have successfully run the project! 

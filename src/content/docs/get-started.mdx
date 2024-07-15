@@ -10,27 +10,38 @@ Welcome to the fam!
 
 ## Who is this for?
 
-Devs who want to use **Flutter + Firebase** tech stack to build mobile apps faster.
+This starter kit is for developers who want to use the **Flutter + Firebase** tech stack to build mobile apps quickly and efficiently. With this setup, you can focus on the core business logic of your application while worrying less about essential features like user authentication, payment integration, email support, and UI components.
 
-This will allow you to worry less about must-haves for any apps, like - user authentication flow, payment integration, email support and focus more on the core business logic of their application.
 
-## Project Structure
+If you are new to Flutter, this <a href="https://docs.flutter.dev/get-started" target="_blank">Flutter Tutorial</a> will help you to get started.
 
-📝 **pubspec.yaml**: This file contains all the project related details like name, description, dependencies, SDK version, assets used in project, etc. If you're from web background, consider this similar to `package.json`
+###  Why Flutter, Dart, and Firebase?
+**Flutter:** Flutter is a UI toolkit developed by Google for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language and offers a rich set of pre-designed widgets to create beautiful user interfaces. Dart is known for its fast performance and ease of learning.
 
-📁 **lib:** This folder contains all the project related Dart code - app pages, components, state management, services to interact with Firebase, Stripe, Mailgun, etc. 
+**Firebase:** Firebase is a comprehensive app development platform that provides various backend services such as authentication, real-time databases, cloud storage, and more. It's an excellent choice for quickly setting up a robust backend for your app.
+
+### Project Structure
+📝 **pubspec.yaml and pubspec.lock**: These files contain all the project-related details like project name, description, version, dependencies, SDK version, assets used in the project, etc. If you're from a web background, consider this similar to `package.json` and `package-lock.json`.
 
 <div style="display: flex; align-items: flex-start;">
   <div style="flex: 1; padding-right: 20px;">
+    📁 **/lib:** This folder contains all the project related Dart code - app pages, components, state management, services to interact with Firebase, Stripe, Mailgun, etc. 
     <ul>
       <li><code>/pages</code>: This folder contains all the pages(screens) of the app. Example: Login page, Home page, Profile page, etc.</li>
       <li><code>/components</code>: Components are reusable UI parts of the app. They can be used across multiple pages. Example: buttons, sliders, text input field, cards, etc.</li>
       <li><code>/models</code>: Models are classes that define the structure of the data. It is used to validate we expect to receive from any service and also to define the structure of the data we are sending to any service. Example: User model, product model, etc.</li>
       <li><code>/services</code>: Service classes contain the code to interact with Firebase, Stripe, Mailgun, etc. Example: Auth service, Firestore service, etc.</li>
       <li><code>/theme</code>: This folder contains all the theme related code of the app. Example: Colors, Fonts, etc.</li>
+      <li><code>firebase_options.dart</code>: This file contains the configuration for Firebase specific to this project. This Firebase config file contains unique, but non-secret identifiers for each platform you selected.</li>
     </ul>
   </div>
   <div style="flex: 1;">
     <Image src={projectStructure} alt="Project Structure" />
   </div>
 </div>
+
+  📁 **/android:** This folder contains all the Android-related code and configurations. It contains the AndroidManifest.xml file for Android-specific configurations.
+
+  📁 **/ios:** This folder contains all the iOS-related code and configurations of the app. Info.plist is the main file for iOS-specific configurations.
+
+  📁 **/assets:** This folder contains all the assets and media used in the project, such as images and fonts.
