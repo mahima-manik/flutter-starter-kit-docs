@@ -10,7 +10,7 @@ export default defineConfig({
     logo: {
       src: './src/assets/logo.png',
     },
-    favicon: './src/assets/logo.png',
+    favicon: './public/favicon.ico',
     social: {
       github: 'https://github.com/mahima-manik/',
       twitter: 'https://twitter.com/mahima_manik',
