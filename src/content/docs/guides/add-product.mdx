@@ -4,6 +4,8 @@ description: Add Product
 ---
 
 import productDocument from '../../../assets/product-document.png';
+import homeLight from '../../../assets/home-light.png';
+import homeDark from '../../../assets/home-dark.png';
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
 
@@ -27,6 +29,11 @@ When we display product details, we will display the images from this Firebase S
 </Aside>
 
 That's it! You have successfully added a product to the store. It will start to display on the home page once you restart the app.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Image src={homeLight} style={{ maxWidth: '48%' }} alt="Home" />
+    <Image src={homeDark} style={{ maxWidth: '48%' }} alt="Home" />
+</div>
 
 ## Product Model
 Model for the product is defined in `models/product.dart`.
