@@ -1,16 +1,23 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import vercel from '@astrojs/vercel/serverless';
 
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [starlight({
     title: 'Flutter Starter Kit',
     description: 'A starter kit for building Flutter apps. Ship your Flutter app with Firebase in days, not months',
     logo: {
       src: './src/assets/logo.png',
     },
-    favicon: './public/favicon.ico',
+    favicon: './favicon.ico',
     social: {
       github: 'https://github.com/mahima-manik/',
       twitter: 'https://twitter.com/mahima_manik',
@@ -67,5 +74,5 @@ export default defineConfig({
         link: '/components/quantity/'
       }, ]
     }]
-  }), mdx()]
+  }), mdx()],
 });
