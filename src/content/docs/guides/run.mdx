@@ -8,7 +8,7 @@ import deviceSelect from '../../../assets/device-select.png';
 import runButton from '../../../assets/run-button.png';
 import loginScreenLight from '../../../assets/login-screen-light.png';
 import loginScreenDark from '../../../assets/login-screen-dark.png';
-
+import shaKey from '../../../assets/sha-key.png';
 
 Flutter provider quite an extensive guide on installation for different platforms: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install). Choose your development environment and target device to get started. 
 
@@ -90,5 +90,27 @@ Whether you followed Windows/Mac setup, run `flutter doctor` to verify that flut
     
 
 Congratulations! 🥳 You have successfully run the project! 
+
+### Additional Step (Android)
+If you try to login with Google provider on Android device, you will see an error. This is because Google sign-in require you to provide the SHA-1 of your signing certificate so we can create an OAuth2 client and API key for your app.
+
+To create a SHA-1 key, you can use the following command:
+
+```bash
+
+# Mac/Linux
+keytool -list -v \
+-alias androiddebugkey -keystore ~/.android/debug.keystore
+
+# Windows
+keytool -list -v \
+-alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+```
+
+You will see Certificate fingerprints, select the one that starts with `SHA1:`. Copy the SHA-1 key. Go to your Firebase console -> Project Settings -> Your apps -> Android -> SHA certificate fingerprints -> Add fingerprint -> Paste the SHA-1 key -> Add.
+
+<Image src={shaKey} alt="SHA Key" />
+
+More information on this: <a href="https://developers.google.com/android/guides/client-auth" target="_blank">Google Developers - Client Authentication</a>
 
 The project is linked to my Firebase, Stripe and resend account. Now we will make changes step-by-step to integrate with your own accounts.
